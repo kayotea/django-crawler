@@ -1,0 +1,14 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>Crawler: NY Times</title>
+    </head>
+    <body>
+        <h3>Headlines (With Links) from Current New York Times Main Page:</h3>
+        <ul>
+            {% for headline in headlines%}
+                <li><a href="{{headline.0}}">{{headline.1}}</a></li>
+            {% endfor %}
+        </ul>
+    </body>
+</html>
