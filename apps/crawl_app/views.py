@@ -147,29 +147,21 @@ def youtube(request):
     #         filteredArr.append([name, author, views, date])
     #         count += 6
     #     return filteredArr
-    
     # filteredlist = filterRowList(rowlist)
 
-    index1 = randint(0, 81)
-    index2 = randint(0, 81)
+    index1 = randint(1, 80)
+    index2 = randint(1, 80)
     while index1 == index2:
-        index2 = randint(0, 81)
+        index2 = randint(1, 80)
 
     # print index1, index2
     # print filteredlist[index1], filteredlist[index2]
 
-        
-
-    
     videos = Video.objects.all()
     #print videos
-    
-        
     context = {
         #'list' : videos,
         'song1' : Video.objects.get(pk=index1),
         'song2' : Video.objects.get(pk=index2)
     }
-
-
     return render(request, 'crawl_app/youtube.html', context)

@@ -1,0 +1,97 @@
+*{
+    margin: 0px;
+}
+#wrapper{
+    background-color: lightblue;
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    padding: 30px;
+    margin: 0px auto;
+}
+.left{
+    display: inline-block;
+    margin: 0px;
+}
+.right{
+    float: right;
+    display: inline-block;
+    margin: 0px 5px;
+}
+.col{
+    width: 45%;
+    background:  lightcyan;
+    border-radius: 20px;
+    padding: 20px;
+    display: inline-block;
+    vertical-align: top;
+    overflow: scroll;
+    text-align: center;
+}
+.noclick{
+    width: 45%;
+    background:  lightcyan;
+    border-radius: 20px;
+    padding: 20px;
+    display: inline-block;
+    vertical-align: top;
+    overflow: scroll;
+    text-align: center;
+}
+.hideme{
+    display: none;
+}
+.showme{
+    display: visible;
+}
+.correct{
+    background-color: lightgreen;
+}
+/*label{
+    display: inline-block;
+    float: left;
+}
+input{
+    display: inline-block;
+    float: right;
+}*/
+h1, h2, h3, h4, p, form{
+    margin: 20px 0px;
+}
+a{
+    text-decoration: none;
+}
+.small{
+    font-size: 90%;
+    margin: 0px;
+}
+.i{
+    font-style: italic;
+}
+.b{
+    font-weight: bold;
+}
+.center{
+    background-color: lightcoral;
+    margin: 0px auto;
+    text-align: center;
+    display: block;
+    padding: 20px;
+    width: 30%;
+    border-radius: 20px;
+    color: white;
+    display: none;
+}
+.centershow{
+    background-color: lightcoral;
+    margin: 0px auto;
+    text-align: center;
+    display: block;
+    padding: 20px;
+    width: 30%;
+    border-radius: 20px;
+    color: white;
+    display: none;
+}
+button{
+    background-color: lightgreen;
+    display: block;
+}

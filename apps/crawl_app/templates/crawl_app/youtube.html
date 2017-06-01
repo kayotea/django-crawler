@@ -2,15 +2,72 @@
 <html>
     <head>
         <title>Crawler: Youtube Videos</title>
+        {%load staticfiles%}
+        <link rel="stylesheet" href="{% static 'crawl_app/css/style.css'%}" charset="utf-8">
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function(){
+                $(document.body).on('click', '.col', function(){
+                    for (var i = 1; i <=2; i++){
+                        if ($('.col').children(':nth-child('+i+')').hasClass('hideme')){
+                            $('.col').children(':nth-child('+i+')').removeClass('hideme');
+                            $('.col').children(':nth-child('+i+')').addClass('seeme');
+                        }
+                    }
+                    var song1_views = $('.options').children(':nth-child('+1+')').children(':nth-child('+2+')').text();
+                    var song2_views = $('.options').children(':nth-child('+2+')').children(':nth-child('+2+')').text();
+
+                    if (song1_views > song2_views){
+                        console.log('song1');
+                        if ($(this).text() == $('.options').children(':nth-child('+1+')').text()){
+                            console.log('correct');
+                        }
+                        else if ($(this).text() == $('.options').children(':nth-child('+2+')').text()){
+                            console.log('incorrect');
+                        }
+                    }else{
+                        console.log('song2');
+                        if ($(this).text() == $('.options').children(':nth-child('+1+')').text()){
+                            console.log('incorrect');
+                        }
+                        else if ($(this).text() == $('.options').children(':nth-child('+2+')').text()){
+                            console.log('correct');
+                        }
+                    }
+                    console.log($(this));
+                    console.log($(this).text());
+                    console.log($('.options').children(':nth-child('+2+')').text());
+                    
+                    for (var i = 1; i <=2; i++){
+                        $('.options').children(':nth-child('+i+')').removeClass('col');
+                        $('.options').children(':nth-child('+i+')').addClass('noclick');
+                    }
+
+                    $('.button').toggleClass('centershow', 'center');
+                });
+            });
+        </script>
     </head>
     <body>
-        <h3>Youtube videos:</h3>
-        <ul>
-            <!--{%for item in list%}
-                <li>{{item.title}}</li>
-            {%endfor%}-->
-        </ul>
-        <p>{{song1.title}} by {{song1.author}}</p>
-        <p>{{song2.title}} by {{song2.author}}</p>
+        <div id="wrapper">
+            <h3>Which Youtube Video Has More Views?</h3>
+            <ul>
+                <!--{%for item in list%}
+                    <li>{{item.title}}</li>
+                {%endfor%}-->
+            </ul>
+            <p>points: </p>
+            <div class="options">
+                <div class="col">
+                    <p>{{song1.title}} by {{song1.author}}</p>
+                    <p class="hideme">{{song1.views}} billion views</p>
+                </div>
+                <div class="col">
+                    <p>{{song2.title}} by {{song2.author}}</p>
+                    <p class="hideme">{{song2.views}} billion views</p>
+                </div>
+            </div>
+            <a href="/youtube"><p class="button centershow">Play Again!</p></a>
+        </div>
     </body>
 </html>
