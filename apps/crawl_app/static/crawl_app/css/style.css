@@ -3,6 +3,7 @@
 }
 #wrapper{
     background-color: lightblue;
+    height: 800px;
     font-family: "Helvetica Neue", Arial, sans-serif;
     padding: 30px;
     margin: 0px auto;
@@ -17,8 +18,7 @@
     margin: 0px 5px;
 }
 .col{
-    width: 45%;
-    background:  lightcyan;
+    width: 40%;
     border-radius: 20px;
     padding: 20px;
     display: inline-block;
@@ -27,14 +27,25 @@
     text-align: center;
 }
 .noclick{
-    width: 45%;
-    background:  lightcyan;
+    width: 40%;
     border-radius: 20px;
     padding: 20px;
     display: inline-block;
     vertical-align: top;
     overflow: scroll;
     text-align: center;
+}
+.lightcyan{
+    background-color: lightcyan;
+    border: 8px solid #cbf1f1;
+}
+.green{
+    background-color: #b5f3b5;
+    border: 8px solid #a7e6a7;
+}
+.red{
+    background-color: #f5c2c2;
+    border: 8px solid #f1adad;
 }
 .hideme{
     display: none;
@@ -44,6 +55,9 @@
 }
 .correct{
     background-color: lightgreen;
+}
+.options{
+    text-align: center;
 }
 /*label{
     display: inline-block;
@@ -55,6 +69,7 @@ input{
 }*/
 h1, h2, h3, h4, p, form{
     margin: 20px 0px;
+    text-align: center;
 }
 a{
     text-decoration: none;
@@ -69,29 +84,20 @@ a{
 .b{
     font-weight: bold;
 }
-.center{
-    background-color: lightcoral;
+.big{
+    font-size: 180%;
+}
+.bigish{
+    font-size: 120%;
+}
+.button{
+    background-color: #94b8ef;
+    border: 5px solid #85a4d4;
     margin: 0px auto;
     text-align: center;
     display: block;
     padding: 20px;
-    width: 30%;
+    width: 25%;
     border-radius: 20px;
     color: white;
-    display: none;
-}
-.centershow{
-    background-color: lightcoral;
-    margin: 0px auto;
-    text-align: center;
-    display: block;
-    padding: 20px;
-    width: 30%;
-    border-radius: 20px;
-    color: white;
-    display: none;
-}
-button{
-    background-color: lightgreen;
-    display: block;
 }

@@ -8,14 +8,12 @@
         <script type="text/javascript">
             $(document).ready(function(){
                 $(document.body).on('click', '.col', function(){
-                    for (var i = 1; i <=2; i++){
-                        if ($('.col').children(':nth-child('+i+')').hasClass('hideme')){
-                            $('.col').children(':nth-child('+i+')').removeClass('hideme');
-                            $('.col').children(':nth-child('+i+')').addClass('seeme');
+                        if ($('.col').children(':nth-child('+3+')').hasClass('hideme')){
+                            $('.col').children(':nth-child('+3+')').removeClass('hideme');
+                            $('.col').children(':nth-child('+3+')').addClass('seeme');
                         }
-                    }
-                    var song1_views = $('.options').children(':nth-child('+1+')').children(':nth-child('+2+')').text();
-                    var song2_views = $('.options').children(':nth-child('+2+')').children(':nth-child('+2+')').text();
+                    var song1_views = $('.options').children(':nth-child('+1+')').children(':nth-child('+3+')').text();
+                    var song2_views = $('.options').children(':nth-child('+2+')').children(':nth-child('+3+')').text();
 
                     if (song1_views > song2_views){
                         console.log('song1');
@@ -24,15 +22,23 @@
                         }
                         else if ($(this).text() == $('.options').children(':nth-child('+2+')').text()){
                             console.log('incorrect');
+                            $('.options').children(':nth-child('+2+')').removeClass('lightcyan');
+                            $('.options').children(':nth-child('+2+')').addClass('red');
                         }
+                        $('.options').children(':nth-child('+1+')').removeClass('lightcyan');
+                        $('.options').children(':nth-child('+1+')').addClass('green');
                     }else{
                         console.log('song2');
                         if ($(this).text() == $('.options').children(':nth-child('+1+')').text()){
                             console.log('incorrect');
+                            $('.options').children(':nth-child('+1+')').removeClass('lightcyan');
+                            $('.options').children(':nth-child('+1+')').addClass('red');
                         }
                         else if ($(this).text() == $('.options').children(':nth-child('+2+')').text()){
                             console.log('correct');
                         }
+                        $('.options').children(':nth-child('+2+')').removeClass('lightcyan');
+                        $('.options').children(':nth-child('+2+')').addClass('green');
                     }
                     console.log($(this));
                     console.log($(this).text());
@@ -42,32 +48,31 @@
                         $('.options').children(':nth-child('+i+')').removeClass('col');
                         $('.options').children(':nth-child('+i+')').addClass('noclick');
                     }
-
-                    $('.button').toggleClass('centershow', 'center');
                 });
             });
         </script>
     </head>
     <body>
         <div id="wrapper">
-            <h3>Which Youtube Video Has More Views?</h3>
+            <h2>Which Youtube Video Has More Views?</h2>
             <ul>
                 <!--{%for item in list%}
                     <li>{{item.title}}</li>
                 {%endfor%}-->
             </ul>
-            <p>points: </p>
+            <p>Points: </p>
             <div class="options">
-                <div class="col">
-                    <p>{{song1.title}} by {{song1.author}}</p>
-                    <p class="hideme">{{song1.views}} billion views</p>
+                <div class="col lightcyan">
+                    <p class="big">{{song1.title}}</p> <p>by {{song1.author}}</p>
+                    <p class="hideme bigish">{{song1.views}} billion views</p>
                 </div>
-                <div class="col">
-                    <p>{{song2.title}} by {{song2.author}}</p>
-                    <p class="hideme">{{song2.views}} billion views</p>
+                <div class="col lightcyan">
+                    <p class="big">{{song2.title}}</p> <p>by {{song2.author}}</p>
+                    <p class="hideme bigish">{{song2.views}} billion views</p>
                 </div>
             </div>
-            <a href="/youtube"><p class="button centershow">Play Again!</p></a>
+            <br>
+            <a href="/youtube"><p class="button bigish">Play Again!</p></a>
         </div>
     </body>
 </html>
