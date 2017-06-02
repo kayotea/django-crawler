@@ -1,19 +1,19 @@
 <!DOCTYPE HTML>
 <html>
     <head>
-        <title>Crawler: Youtube Videos</title>
+        <title>Crawler: Tea Consumption</title>
         {%load staticfiles%}
         <link rel="stylesheet" href="{% static 'crawl_app/css/style.css'%}" charset="utf-8">
         <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script type="text/javascript">
             $(document).ready(function(){
                 $(document.body).on('click', '.col', function(){
-                        if ($('.col').children(':nth-child('+4+')').hasClass('hideme')){
-                            $('.col').children(':nth-child('+4+')').removeClass('hideme');
-                            $('.col').children(':nth-child('+4+')').addClass('seeme');
+                        if ($('.col').children(':nth-child('+3+')').hasClass('hideme')){
+                            $('.col').children(':nth-child('+3+')').removeClass('hideme');
+                            $('.col').children(':nth-child('+3+')').addClass('seeme');
                         }
-                    var song1_views = $('.options').children(':nth-child('+1+')').children(':nth-child('+4+')').text();
-                    var song2_views = $('.options').children(':nth-child('+2+')').children(':nth-child('+4+')').text();
+                    var song1_views = $('.options').children(':nth-child('+1+')').children(':nth-child('+3+')').text();
+                    var song2_views = $('.options').children(':nth-child('+2+')').children(':nth-child('+3+')').text();
 
                     if (song1_views > song2_views){
                         console.log('song1');
@@ -54,27 +54,25 @@
     </head>
     <body>
         <div id="wrapper">
-            <h2>Which Youtube Video Has More Views?</h2>
-            <ol>
-                <!--{%for item in list%}
-                    <li>{{item.title}} {{item.author}}</li>
-                {%endfor%}-->
-            </ol>
-            <!--<p>Points: </p>-->
+            <!--<h2>Which Youtube Video Has More Views?</h2>-->
+            <ul>
+                {%for country in list %}
+                    <li>{{country.name}}</li>
+                {%endfor%}
+            </ul>
+            <!--<p>Points: </p>
             <div class="options">
                 <div class="col lightcyan">
-                    <img src="static/crawl_app/img/{{song1.id}}.jpg">
                     <p class="big">{{song1.title}}</p> <p>by {{song1.author}}</p>
                     <p class="hideme bigish">{{song1.views}} billion views</p>
                 </div>
                 <div class="col lightcyan">
-                    <img src="static/crawl_app/img/{{song2.id}}.jpg">
                     <p class="big">{{song2.title}}</p> <p>by {{song2.author}}</p>
                     <p class="hideme bigish">{{song2.views}} billion views</p>
                 </div>
             </div>
             <br>
-            <a href="/"><p class="button bigish">Play Again!</p></a>
+            <a href="/youtube"><p class="button bigish">Play Again!</p></a>-->
         </div>
     </body>
 </html>

@@ -160,8 +160,40 @@ def youtube(request):
     videos = Video.objects.all()
     #print videos
     context = {
-        #'list' : videos,
+        'list' : videos,
         'song1' : Video.objects.get(pk=index1),
         'song2' : Video.objects.get(pk=index2)
     }
     return render(request, 'crawl_app/youtube.html', context)
+
+def tea(request):
+    # url = 'https://en.wikipedia.org/wiki/List_of_countries_by_tea_consumption_per_capita'
+    # html = urlopen(url)
+    # td = SoupStrainer('td')
+    # soup = BeautifulSoup(html, 'html.parser')
+    # td_soup = soup.find_all(td)
+
+    # def makeRowList(td_soup):
+    #     tdArr = []
+    #     for i in range(4, 160*3+1):
+    #         tdArr.append(td_soup[i].getText())
+    #     return tdArr
+    
+    # rowlist = makeRowList(td_soup)
+    # # for item in rowlist:
+    # #     print item
+
+    # def filteredRowList(arr):
+    #     filteredArr = []
+    #     count = 1
+    #     while count < len(arr):
+    #         country = arr[count]
+    #         tea_drunk = arr[count+1]
+    #         filteredArr.append([country, tea_drunk])
+    #         count += 3
+    #     return filteredArr
+    # filteredlist = filteredRowList(rowlist)
+    # for item in filteredlist:
+    #     print item
+
+    return render(request, 'crawl_app/tea.html')
